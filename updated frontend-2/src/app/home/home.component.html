@@ -1,0 +1,189 @@
+
+<app-header></app-header>
+
+<!-- Start Banner Hero -->
+
+<div >
+ 
+  <div >
+      <div >
+          <div >
+              <div >
+                 
+                  <div  style="font-size: 200px;text-align: center;height: 790px;margin-top: 100px;">
+                      <div >
+                     
+                          <h1  class="h1 text-success"><b>Online</b> Book Store</h1>
+                          <h3 class="h2">A room without books is like a body without a soul</h3>
+                          <p>
+                            Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.
+                          </p>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <img  class="img-fluid" src="https://www.clipartmax.com/png/full/133-1335370_rome-for-book-lovers-central-magazine-city-on-the-web-book-love.png" alt="">
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <p>
+                            A reader lives a thousand lives before he dies
+                        </p>
+                        <p>&hearts;</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+  </div>
+  <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-jassa-hero-carousel" role="button" data-bs-slide="prev">
+      <i class="fas fa-chevron-left"></i>
+  </a>
+  <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-jassa-hero-carousel" role="button" data-bs-slide="next">
+      <i class="fas fa-chevron-right"></i>
+  </a>
+</div>
+<!-- End Banner Hero -->
+
+
+<!-- Start Categories of The Month -->
+<section style=" background-color :rgb(243, 239, 239)">
+    <br>
+    <h1 style="text-align: center;" class="h1">Our Books</h1>
+    <p style="text-align: center;">
+        The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.
+    </p>
+
+
+
+
+
+   <div  style="margin-left: 50px" class="row">
+ 
+    <div *ngFor="let p of books" class="card" style="width:250px;margin: 10px;background-color: rgb(192, 192,192);  border-radius: 15px 50px;">
+        <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%"> -->
+      <img  style="transition: 0.3 ease-in-out;" width="250" height="250" [src]="'data:image/png;base64,'+p.picture" alt="">
+      <span class="card-body">
+        <h4 style="text-align: center;color: rgb(255, 0, 0);" class="card-title">{{p.id}}</h4>
+       
+        
+        <p style="text-align: center;color: rgb(0, 0, 0);"><strong style="color: rgb(30, 0, 255);">name :</strong> {{p.name}}</p>
+        <p style="text-align: center;color: rgb(255, 0, 0);"><strong style="color: rgb(30, 0,255);">Price :</strong> ₹{{p.price}}</p>
+        <p style="text-align: center;color: rgb(0, 0, 0);"><strong style="color: rgb(30, 0, 255);">Category :</strong> {{p.category}}</p>
+        <p style="text-align: center;color: rgb(0, 0, 0);"><strong style="color: rgb(30, 0, 255);">Genre :</strong> {{p.genre}}</p>
+
+      
+      
+      
+        <button  routerLink="cartAdd/{{p.id}}"  style="margin-left: 78px;background-color: rgb(0, 0, 0);padding: 2%;font-size: medium;width: 30%;" type="button" class="btn btn-primary">Shop</button>
+     
+       
+        <!-- <a href="#" class="btn btn-primary stretched-link">See Profile</a> -->
+        
+      </span>
+    </div>
+  </div>
+
+
+
+</section>
+<!-- End Categories of The Month -->
+
+
+<!-- Start Featured Product -->
+<section class="bg-light">
+  <div class="container py-5">
+      <div class="row text-center py-3">
+          <div class="col-lg-6 m-auto">
+              <h1 class="h1">Featured Books</h1>
+              <p>
+                  The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.
+              </p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-12 col-md-4 mb-4">
+              <div class="card h-100">
+                  <a href="#">
+                      <img src="https://images-na.ssl-images-amazon.com/images/I/71jHeLMobIL.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <div class="card-body">
+                      <ul class="list-unstyled d-flex justify-content-between">
+                          <li>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-muted fa fa-star"></i>
+                              <i class="text-muted fa fa-star"></i>
+                          </li>
+                          <li class="text-muted text-right">Rs. 520.00</li>
+                      </ul>
+                      <a href="#" class="h2 text-decoration-none text-dark">Yayati Kadambari</a>
+                      <p class="card-text">
+                          The story of Yayati is perhaps one of the most intriguing and fascinating episodes of Mahabharata. Yayati was a great scholar and one of the noblest rulers of olden times
+                      </p>
+                      <p class="text-muted">Reviews (24)</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+              <div class="card h-100">
+                  <a href="#">
+                      <img src="https://images-na.ssl-images-amazon.com/images/I/915W-2YXl6L.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <div class="card-body">
+                      <ul class="list-unstyled d-flex justify-content-between">
+                          <li>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-muted fa fa-star"></i>
+                              <i class="text-muted fa fa-star"></i>
+                          </li>
+                          <li class="text-muted text-right">Rs. 1500.00</li>
+                      </ul>
+                      <a href="#" class="h2 text-decoration-none text-dark">Mrutyunjay</a>
+                      <p class="card-text">
+                          The search for the meaning of Being is man's eternal quest and the subject of his greatest creations.
+                      </p>
+                      <p class="text-muted">Reviews (48)</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+              <div class="card h-100">
+                  <a href="#">
+                      <img src="https://i.pinimg.com/originals/b5/83/6c/b5836c05e725d73f79020b02678e5f79.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <div class="card-body">
+                      <ul class="list-unstyled d-flex justify-content-between">
+                          <li>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                              <i class="text-warning fa fa-star"></i>
+                          </li>
+                          <li class="text-muted text-right">Rs. 2360.00</li>
+                      </ul>
+                      <a href="#" class="h2 text-decoration-none text-dark">Chhava</a>
+                      <p class="card-text">
+                          Chava is a Marathi historical work which tells the story of Sambhaji Bhosale, the eldest son of Chhatrapati Shivaji Maharaj.
+                      </p>
+                      <p class="text-muted">Reviews (74)</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
+<!-- End Featured Product -->
+<router-outlet></router-outlet>

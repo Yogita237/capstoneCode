@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+   
+
+</head>
+<body>
+    <br>
+    <h1 style="color: rgb(11, 134, 7);text-align: center;">Add to Cart</h1>
+    <div class="container">
+    <form [formGroup]="addtocart">
+        <div class= "form-group">
+            <label >Quantity</label>
+            <input  type="text" class="form-control" name="quantity" [(ngModel)]="books.quantity" formControlName="quantity" [placeholder]="1" class="form-control" readonly>
+            </div>
+    <div class= "form-group">
+    <label >Id</label>
+    <input  type="text" class="form-control" name="id" [(ngModel)]="books.id" formControlName="id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+    <label>Name</label>
+    <input  type="text" class="form-control" name="name" [(ngModel)]="books.name" formControlName="name" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+    <label>Price</label>
+    <input  type="text" class="form-control" name="price" [(ngModel)]="books.price" formControlName="price" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" style="background-color: rgb(14, 195, 47);padding: 1%;width: 5%;font-size: medium;" (click)="fnAdd()">Add</button>
+    </div>
+    </form>
+</div>
+<br>
+    
+
+</body>
+</html>
+
+<app-footer></app-footer>

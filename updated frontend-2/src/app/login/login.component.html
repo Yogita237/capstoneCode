@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-sm-4 mx-auto">
+    <h1 style="text-align: center;">User Login</h1>
+    <div class="card shadow " style="margin-top: 10px;width: 200;">
+      <div class="card-header bg-white"  >
+       
+      </div>
+      <div class="card-body">
+        <form [formGroup]="fg" (submit)="validate(fg.value)" novalidate>
+          <div class="form-group">
+            <h5>User Id</h5>
+            <input
+           
+              type="text"
+              formControlName="userid"
+              required
+              name="userid"
+              placeholder="userid"
+              class="form-control"
+            />
+            <small
+              class="form-text text-danger"
+              *ngIf="submitted && !fg.controls['userid'].valid"
+              >Name must be given</small
+            >
+          </div>
+          
+          <div class="form-group">
+            <h5>Password</h5>
+            <input
+              type="password"
+              formControlName="pwd"
+              required
+              name="password"
+              placeholder="password"
+              class="form-control"
+            />
+            <small
+              class="form-text text-danger"
+              *ngIf="submitted && !fg.controls['pwd'].valid"
+              >Password must be given</small
+            >
+          </div>
+          <input
+          type="submit"
+          value="Sign In"
+          class="btn btn-primary btn-block"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

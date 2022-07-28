@@ -1,0 +1,156 @@
+
+<app-header></app-header>
+<section class="h-100" style="background-color: #eee;">
+    <div class="container h-100 py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-10">
+  
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+          
+          </div>
+
+
+
+
+          
+            <div >
+              <div class="row d-flex justify-content-between align-items-center">
+              
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                  <p style="margin-left: 10px;color: rgb(34, 160, 11);" class="lead fw-normal mb-2">Name</p>
+                  
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                
+                  <h5 style="margin-left: 35px;color: rgb(34, 160, 11);" class="mb-0">Quantity</h5>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 style="margin-right: 20px;color: rgb(34, 160, 11);" class="mb-0">Price</h5>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 style="margin-left: -15px;color: rgb(34, 160, 11);" class="mb-0">Total</h5>
+                </div>
+                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                  <a ><i ></i></a>
+                </div>
+              </div>
+            </div>
+          
+
+
+
+
+
+
+  
+          <div class="card rounded-3 mb-4"   *ngFor="let p of books">
+            <div class="card-body p-4">
+              <div class="row d-flex justify-content-between align-items-center">
+              
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                  <p class="lead fw-normal mb-2">{{p.name}}</p>
+                  
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                  <button class="btn btn-link px-2" (click)="updateqty(p.id,p.quantity-1)"
+                   >
+                    <i class="fas fa-minus"></i>
+                  </button>
+  
+                  <input id="form1" min="0" name="quantity" [value]=p.quantity type="text" readonly
+                    class="form-control form-control-sm" />
+  
+                  <button class="btn btn-link px-2" (click)="updateqty(p.id,p.quantity+1)"
+                   >
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 class="mb-0">{{p.price}}</h5>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 class="mb-0">{{p.price * p.quantity}}</h5>
+                </div>
+                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                  <a (click)="delete(p.id)" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                </div>
+              </div>
+            </div>
+         
+          </div>
+  
+      
+
+          <div class="container">
+            <div class="row">
+             
+             
+              
+                <div class="col-12 mt-4">
+                    <div class="card p-3">
+                        <p class="mb-0 fw-bold h4">Payment Methods</p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card p-3">
+                        <div class="card-body border p-0">
+                           
+                            <div class="collapse p-3 pt-0" id="collapseExample">
+                                <div class="row">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body border p-0" >
+                          
+                            <div class="collapse show p-3 pt-0" id="collapseExample">
+                                <div class="row">
+                                    <div class="col-lg-5 mb-lg-0 mb-3">
+                                       
+                                     
+                                        
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <form action="" class="form">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form__div">
+                                                      <label for="" class="form__label">Address</label>
+                                                        <input type="text" [value]="address" class="form-control" placeholder=" ">
+                                                       
+                                                    </div>
+                                                    <br>
+                                                    <input type="radio" id="cash" name="fav_language" value="Cash On Delivery">
+                                                    <label for="cash">Cash On Delivery</label><br>
+                                                    <br>
+                                                </div>
+    
+                                                
+                                                </div>
+    
+                                              
+                                               
+                                               
+                                                <div class="col-12">
+                                                    <div (click)="message()" class="btn btn-primary w-100">Place Order</div>
+                                                </div>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>

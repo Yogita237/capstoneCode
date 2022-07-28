@@ -1,0 +1,60 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="text-align:center;margin-left: 100px;margin-right: 100px;margin-top: 23px;;margin-bottom: 23px;">
+
+    <h1> Add Books </h1><br>
+  <div class="card" style="background-color: rgb(222, 244, 193);">
+
+ 
+    <form [formGroup]="addBookForm">
+        Name: <input  type="text" name="" id="" formControlName="names" class="form-control">
+        Price: <input type="text" name="" id="" formControlName="price" class="form-control">
+        Author: <input type="text" name="" id="" formControlName="author" class="form-control">
+        Genre: <input type="text" name="" id="" formControlName="genre" class="form-control">
+        Category: <input type="text" name="" id="" formControlName="category" class="form-control">
+        Picture: <input  type="file" name="" id="" formControlName="picture" class="form-control" (change)="fnChange($event)">
+        <br>
+        <input type="button" value="Add" class="btn btn-success" (click)="fnAdd()">
+    </form>
+</div>
+<br>
+<h2>User Data</h2>
+<br>
+
+
+
+    <table class="zui-table" style="text-align: center;" >
+        <thead>
+          <tr>
+            <th style="text-align: center;">Name</th>
+            <th style="text-align: center;">Address</th>
+            <th style="text-align: center;">Gender</th>
+            <th style="text-align: center;">Email Id</th>
+            <th style="text-align: center;">Phone</th>
+            <th style="text-align: center;">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of list">
+            <td>{{ p.name }}</td>
+            <td>{{ p.city }}</td>
+            <td>{{ p.gender }}</td>
+            <td>{{ p.userid }}</td>
+            <td>{{ p.phone }}</td>
+            <td><a (click)="delete(p.id)" class="text-danger"><i class="fas fa-trash fa-lg"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>
+
+<app-footer></app-footer>
+

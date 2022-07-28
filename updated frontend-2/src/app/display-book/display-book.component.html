@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Books</title>
+
+</head>
+<body >
+  
+
+  <div  style="margin-left: 60px;margin-right: 60px;" class="row">
+ 
+    <div *ngFor="let p of books" class="card" style="width:300px">
+      <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%"> -->
+      <img   width="280" height="140" [src]="'data:image/png;base64,'+p.picture" alt="">
+      <span class="card-body">
+        <h4 style="text-align: center;" class="card-title">{{p.id}}</h4>
+        <h4 style="text-align: center;" class="card-title">{{p.name}}</h4>
+        <h4 style="text-align: center;" class="card-text">{{p.author}}</h4>
+        <h4 style="text-align: center;" class="card-text">{{p.price}}</h4>
+        <h4 style="text-align: center;" class="card-text">{{p.genre}}</h4>
+        <h4 style="text-align: center;" class="card-text">{{p.category}}</h4>
+        <p  style="text-align: center;" class="card-text">{{p.description}}</p>
+        <input style="width: 20%;background-color: aquamarine;" type="number" value="Quantity">
+        <button   style="margin-left: 25px;background-color: rgb(14, 195, 47);" type="button" routerLink="/add-cart">Add to cart</button>
+     
+       
+        <!-- <a href="#" class="btn btn-primary stretched-link">See Profile</a> -->
+        
+      </span>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+ 
+<!--
+
+  
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of books">
+           
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+        </tr>
+    </tbody>
+
+</table>-->
